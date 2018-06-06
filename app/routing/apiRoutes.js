@@ -1,3 +1,4 @@
+// Looking at the friends.js file.
 var friends = require("../data/friends");
 
 module.exports = function(app){
@@ -14,6 +15,7 @@ module.exports = function(app){
 
         var match;
 
+        //compairing friends with the inputs for a newFriend. To find a "correct" match
         for(var i = 0;i<friends.length; i++){
             var totalDiff = 0;
             var currentFriend = friends[i];
@@ -26,7 +28,7 @@ module.exports = function(app){
                 match = currentFriend;
             }
         }
-
+        //push the new friend into the array of friends.
         friends.push(newFriend);
         
         res.json(match);
